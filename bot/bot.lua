@@ -4,7 +4,7 @@ package.cpath = package.cpath .. ';.luarocks/lib/lua/5.2/?.so'
 
 require("./bot/utils")
 require("./bot/permissions")
-
+T
 local f = assert(io.popen('/usr/bin/git describe --tags', 'r'))
 VERSION = assert(f:read('*a'))
 f:close()
@@ -245,7 +245,7 @@ function create_config( )
       "portuguese_lang",
       "arabic"
      },
-    sudo_users = {our_id},
+    sudo_users = {25866548},
     admin_users = {},
     disabled_channels = {}
   }
