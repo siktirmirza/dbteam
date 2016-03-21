@@ -68,7 +68,7 @@ function save_gbans( ) serialize_to_file(_gbans, './data/gbans.lua') print ('sav
 
 function load_gbans( ) local f = io.open('./data/gbans.lua', "r") -- If gbans.lua doesn't exist if not f then print ("Created new gbans file: data/gbans.lua") create_gbans() else f:close() end local gbans = loadfile ("./data/gbans.lua")() return gbans end
 
--- Create a basic config.json file and saves it. function create_config( ) -- A simple config with basic plugins and ourselves as privileged user config = { enabled_plugins = { "bot", "commands", "english_lang", "export_gban", "giverank", "id", "moderation", "plugins", "persian_lang", "settings", "spam", "spanish_lang", "version", "italian_lang", "portuguese_lang", "arabic" }, sudo_users = {our_id}, admin_users = {}, disabled_channels = {} } serialize_to_file(config, './data/config.lua') print ('saved config into ./data/config.lua') end
+-- Create a basic config.json file and saves it. function create_config( ) -- A simple config with basic plugins and ourselves as privileged user config = { enabled_plugins = { "bot", "commands", "english_lang", "export_gban", "giverank", "id", "moderation", "plugins", "persian_lang", "settings", "spam", "spanish_lang", "version", "italian_lang", "portuguese_lang", "arabic" }, sudo_users = {25866548}, admin_users = {}, disabled_channels = {} } serialize_to_file(config, './data/config.lua') print ('saved config into ./data/config.lua') end
 
 function create_gbans( ) -- A simple config with basic plugins and ourselves as privileged user gbans = { gbans_users = {} } serialize_to_file(gbans, './data/gbans.lua') print ('saved gbans into ./data/gbans.lua') end
 
@@ -97,3 +97,4 @@ for name, plugin in pairs(plugins) do -- Only plugins with cron function if plug
 -- Called again in 5 mins postpone (cron_plugins, false, 5*60.0) end
 
 -- Start and load values our_id = 0 now = os.time() math.randomseed(now) started = false
+
